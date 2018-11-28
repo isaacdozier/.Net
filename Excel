@@ -1,0 +1,19 @@
+Dim cnt As Integer
+Sub Button20_Click()
+
+    Dim sht1 As Worksheet
+    Dim sht2 As Worksheet
+
+    Set sht1 = ThisWorkbook.Sheets("TRUSS CHECK")
+    Set sht2 = ThisWorkbook.Sheets("TRUSS LIST")
+    
+    If cnt <> 0 And sht1.Range("A2") <> sht2.Range("A" & cnt) Then
+        cnt = cnt + 1
+        
+        sht2.Range("A" & cnt) = sht1.Range("A2")
+        sht2.Range("B" & cnt) = sht1.Range("B2")
+        sht2.Range("C" & cnt) = sht1.Range("K2")
+        
+    End If
+
+End Sub
